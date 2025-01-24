@@ -180,19 +180,7 @@ export default function CategoriesFilters() {
 
         <main className="mx-auto max-w-12xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between border-b border-gray-200 pt-2 pb-2">          
-          <div className="sm:ml-6 sm:block">
-              <div className="flex items-center rounded-md border bg-white pl-3 outline-2 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
-                  {/* <div className="shrink-0 text-base text-gray-500 select-none sm:text-sm/6">$</div> */}
-                  <MagnifyingGlassIcon class="h-6 w-6 text-gray-500" />
-                  
-                  <input
-                      id="price"
-                      name="price"
-                      type="text"
-                      placeholder="Search"
-                      className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                  />                   
-              </div>
+          <div className="sm:ml-6 sm:block">             
             </div>
             <div className="flex items-center">              
               <Menu as="div" className="relative inline-block text-left">

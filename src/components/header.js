@@ -1,6 +1,5 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import {  BellIcon,MagnifyingGlassIcon } from '@heroicons/react/24/outline'
-import { ChevronDownIcon } from '@heroicons/react/16/solid'
+import {  BellIcon, MagnifyingGlassIcon, ShoppingCartIcon  } from '@heroicons/react/24/outline'
 import MenuToggle from './menuToggle';
 
 const navigation = [
@@ -19,46 +18,43 @@ export default function Header() {
     <Disclosure as="nav" className="bg-white-800">
       <div className="mx-auto max-w-12xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button*/}
-            <MenuToggle/>
-          </div>
-          <div className="flex md:flex-1 sm:flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex shrink-0 items-center">
+          <div className="flex bg-white-200 px-2 items-center justify-center sm:items-stretch sm:justify-start">
               <img
                 alt="Your Company"
                 src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
                 className="h-8 w-auto"
               />
-            </div>
            
+          </div>   
+          {/* search */}              
+          <div className="flex w-1/2  items-center rounded-md border bg-white  outline-2 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
+                  {/* <div className="shrink-0 text-base text-gray-500 select-none sm:text-sm/6">$</div> */}
+                  <MagnifyingGlassIcon className="h-6 w-8  text-gray-500" />
+                  
+                  <input
+                      id="price"
+                      name="price"
+                      type="text"
+                      placeholder="Search"
+                      className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                  />                   
           </div>
-            <div className="hidden sm:ml-6 sm:block">
-                <div className="flex  items-center rounded-md border bg-white pl-3 outline-2 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
-                    {/* <div className="shrink-0 text-base text-gray-500 select-none sm:text-sm/6">$</div> */}
-                    <MagnifyingGlassIcon class="h-6 w-6 text-gray-500" />
-                    
-                    <input
-                        id="price"
-                        name="price"
-                        type="text"
-                        placeholder="Search"
-                        className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                    />                   
-                </div>
-           </div>
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <div className="flex px-2 flex items-center">
+            {/* cart */}
             <button
               type="button"
-              className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
+              className="relative rounded-full p-1 text-gray-700 hover:text-blue-600 focus:ring-2 focus:ring-blue focus:ring-offset-2 focus:ring-offset-blue-600 focus:outline-hidden"
             >
               <span className="absolute -inset-1.5" />
               <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="size-6" />
+              <ShoppingCartIcon aria-hidden="true" className="size-6" />
             </button>
-
+            {/* menu toggle */}
+            <div className="inset-y-0 left-0 flex items-center md:hidden">           
+              <MenuToggle/>
+            </div> 
             {/* Profile dropdown */}
-            <Menu as="div" className="relative ml-3">
+            <Menu as="div" className="hidden md:block relative ml-3">
               <div>
                 <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
                   <span className="absolute -inset-1.5" />

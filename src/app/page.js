@@ -1,12 +1,10 @@
-import CategoriesFilters from "@/components/categoriesFilters";
 import Header from "@/components/header";
-import Image from "next/image";
-
+import ProductSection from "@/components/productSection";
 export default function Home() {
   return (
    <div>
-      <Header/>
-      <CategoriesFilters/>
+      <Header/> 
+      <ProductSection/>     
    </div>
   );
 }
