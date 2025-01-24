@@ -3,20 +3,22 @@ import { API_ENDPOINTS } from "@/utils/apiEndpoints";
 import { fetchData } from "@/utils/api";
 import { Suspense } from 'react'
 import ProductCard from "./productCard";
+import CategoriesBar from "./categoriesBar";
 
 export default async function ProductSection(){
     const products = await fetchData(API_ENDPOINTS.getProduct);           
     return(
         <div>
            <CategoriesFilters/>
+           {/* <CategoriesBar/> */}
            <Suspense fallback={<p>Loading ...</p>}>    
                 <div className="bg-white">
                     <div className="mx-auto px-2 py-2 sm:px-4 sm:py-4 lg:px-4">
                         <h2 className="text-xl text-center sm:text-2xl font-bold tracking-tight text-gray-900">Products</h2>
 
-                        <div className="mt-2 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-6 xl:gap-x-8">
-                                {products.map((prod) => (
-                                <ProductCard key={prod.id} product ={prod}/>                        
+                        <div className="mt-2 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:gap-x-8">
+                            {products.map((prod) => (
+                            <ProductCard key={prod.id} product ={prod}/>                        
                             ))}
                             {/* {products.map((product) => (
                                 <div key={product.id} className="group relative">
